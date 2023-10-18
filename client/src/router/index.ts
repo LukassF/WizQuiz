@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import LandingView from '../views/landing/LandingView.vue'
-import LoginView from '../views/login/LoginView.vue';
+import DashboardView from '../views/dashboard/DashboardView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,11 +8,13 @@ const routes: Array<RouteRecordRaw> = [
     name: 'landing',
     component: LandingView
   },
+
   {
-    path: '/login',
-    name: 'login',
-    component: LoginView
-  },
+    path:'/dashboard',
+    name:'dashboard',
+    component: DashboardView
+  }
+
   // {
   //   path: '/about',
   //   name: 'about',

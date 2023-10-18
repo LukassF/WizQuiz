@@ -9,7 +9,9 @@ module.exports = {
     "featured":'#807AEA'
    },
    screens:{
+    "xl/2":'1050px',
     "lg/2":'900px',
+    "md/2":"650px",
     "sm/2":"560px",
     "xs":"400px",
     "xs/2":"320px"

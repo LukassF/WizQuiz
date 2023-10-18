@@ -1,4 +1,6 @@
 <template>
+  <Login v-if="$store.state.showLogin"/>
+  <Signup v-if="$store.state.showSignup"/>
   <section class="pt-40 xs:pt-0 grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 relative z-10 px-5 lg:px-10 min-h-[400px] md:pt-5 ">
     <article
       class="p-2 xs:p-8 lg:p-20 flex flex-col justify-center md:justify-evenly gap-6 items-center"
@@ -1014,7 +1016,7 @@
 
   <hr/>
 
-  <section class="py-10 px-6 md:px-10 lg:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20 relative z-20">
+  <section id="pricing" class="py-10 px-6 md:px-10 lg:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20 relative z-20">
     <div class="text-[19px] xs:text-[22px] sm:text-[30px] w-3/4 text-center text-slate-700">
       Use WizQuiz wisely! Choose one of the 3 tiers below and reap your benefits!
     </div>
@@ -1087,10 +1089,12 @@
 <script lang="ts">
 import X from './components/X.vue';
 import Tick from './components/Tick.vue';
+import Login from './components/Login.vue'
+import Signup from './components/Signup.vue'
 export default {
   name: "landing",
   components:{
-X,Tick
+X,Tick,Login,Signup
   }
 };
 </script>

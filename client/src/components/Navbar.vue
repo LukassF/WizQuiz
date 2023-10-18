@@ -24,9 +24,9 @@
       <div class="gap-16 text-lg text-white font-semibold items-center hidden md:flex">
 
             <router-link to="/" class="relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0">Product</router-link>
-            <span class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0" >Pricing</span>
-            <router-link to="/login" class="relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0">Login</router-link>
-            <button class="bg-white hover:bg-stone-200 transition-all text-black px-6 py-2 rounded-full text-sm font-medium">Start Free Trial</button>
+            <span @click="goToPricing()" class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0" >Pricing</span>
+            <span @click="showLogin()" class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0">Login</span>
+            <button class="bg-white hover:bg-stone-200 transition-all text-black px-6 py-2 rounded-full text-sm font-medium">Start For Free</button>
 
       </div>
 
@@ -42,14 +42,18 @@
   <div class="md:hidden block xs:px-10 w-full sm:w-2/3 absolute right-0 px-5 top-24 sm:top-20 z-30" v-if="showMenu">
     <div class="flex flex-col text-center text-main-blue bg-white p-5 gap-5 rounded-2xl shadow-[2.0px_2.0px_2.0px_2px_rgba(0,0,0,0.18)]">
     <router-link to="/">Product</router-link>
-            <span class="cursor-pointer">Pricing</span>
-            <router-link to="/login">Login</router-link>
-            <button class="bg-main-blue hover:bg-blue-600 transition-all text-white px-6 py-2 rounded-full text-sm font-medium">Start Free Trial</button>
+            <span class="cursor-pointer" @click="goToPricing()">Pricing</span>
+            <span class="cursor-pointer" @click="showLogin()">Login</span>
+            <button class="bg-main-blue hover:bg-blue-600 transition-all text-white px-6 py-2 rounded-full text-sm font-medium">Start For Free</button>
         </div>
 </div>
 </template>
 
 <script lang="ts">
+import gsap from 'gsap'
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
+
 export default {
   name: "Navbar",
   data() {
@@ -62,7 +66,18 @@ export default {
     
     toggleMenu(){
         this.showMenu = !this.showMenu
+    },
+
+    showLogin(){
+      this.$store.commit('setShowLogin',true)
+    },
+
+    goToPricing(){
+      gsap.to(window,{duration:0.4,scrollTo:'#pricing'})
     }
+
+
+    
 
   }
 };
