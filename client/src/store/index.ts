@@ -6,6 +6,7 @@ export default createStore({
       showLogin:false,
       showSignup:false,
       showAside:true,
+      showModifyProfile:false,
   },
   getters: {
   },
@@ -22,6 +23,10 @@ export default createStore({
 
     setShowAside(state){
       state.showAside = !state.showAside
+    },
+
+    setShowModifyProfile(state,value){
+      state.showModifyProfile = value
     }
   },
   actions: {

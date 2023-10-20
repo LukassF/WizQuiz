@@ -1,14 +1,15 @@
 <template>
-    <div class="bg-white rounded-xl h-full grid grid-rows-2 drop-shadow-xl overflow-hidden">
+    <div class="bg-white rounded-xl h-full grid grid-rows-2 drop-shadow-lg overflow-hidden">
 
 <div class="flex justify-center items-center overflow-hidden">
 <div class='w-full h-full relative opacity-50' :style="'background-color:'+color+';'">
     <!-- <span class="text-white text-xs absolute left-2 top-2">20 min</span> -->
 </div>
 </div>
-          <div class="p-3 flex flex-col justify-center gap-4">
-            <h1 class="text-center break-all text-ellipsis line-clamp-2">Countries</h1>
-            <button class="text-sm text-main-blue hover:text-blue-300">Start</button>
+          <div class="py-2 px-4 flex flex-col justify-center">
+            <h1 class="break-all text-ellipsis line-clamp-1">Countries of the world</h1>
+            <span class="text-stone-700 font-light text-sm">By Dozerson</span>
+            <button class="mt-4 text-sm text-main-blue hover:text-blue-300">Start</button>
           </div>
     </div>
 </template>

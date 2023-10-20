@@ -1,6 +1,8 @@
 
 <template >
   <main id="main" class="overflow-hidden w-screen relative">
+    <Login v-if="$store.state.showLogin"/>
+  <Signup v-if="$store.state.showSignup"/>
   <svg class="absolute right-0 -top-16 h-80 md:h-auto md:-top-10 z-0 w-[200%] xs:w-[65%] md:w-[80%] lg:w-[70%]" viewBox="0 0 1116 624" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1628 216.5C1628 342.697 1348.63 623.5 1004 623.5C659.374 623.5 380 342.697 380 216.5C380 90.3029 659.374 -12 1004 -12C1348.63 -12 1628 90.3029 1628 216.5Z" fill="#0158C4"/>
 <rect y="-247.956" width="1108" height="722.341" rx="260" transform="rotate(-20.1148 0 -247.956)" fill="#0158C4"/>
@@ -23,11 +25,13 @@
 
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
+import Login from './views/landing/components/Login.vue'
+import Signup from './views/landing/components/Signup.vue'
 
 export default{
   components:{
     Navbar,
-    Footer
+    Footer,Login,Signup
   }
 }
 </script>

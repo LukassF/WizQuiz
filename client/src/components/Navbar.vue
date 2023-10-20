@@ -24,7 +24,7 @@
       <div class="gap-16 text-lg text-white font-semibold items-center hidden md:flex">
 
             <router-link to="/" class="relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0">Product</router-link>
-            <span @click="goToPricing()" class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0" >Pricing</span>
+            <router-link to='/' @click="goToPricing()" class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0" >Pricing</router-link>
             <span @click="showLogin()" class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0">Login</span>
             <button class="bg-white hover:bg-stone-200 transition-all text-black px-6 py-2 rounded-full text-sm font-medium">Start For Free</button>
 

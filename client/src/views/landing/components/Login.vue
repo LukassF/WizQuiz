@@ -1,5 +1,5 @@
 <template>
-    <section  @click="closeLogin($event)" class="fixed overflow-y-auto overflow-x-hidden left-0 top-0 w-screen h-screen bg-black bg-opacity-60 z-50 grid place-content-center">
+    <section  @click="closeLogin($event)" class="fixed overflow-y-auto overflow-x-hidden left-0 top-0 w-screen h-screen bg-black bg-opacity-60 z-[1200] grid place-content-center">
     <article ref="boxref" class="absolute z-20 h-full w-full xs:h-[80%] xs:aspect-[4/5] xs:w-auto left-0 xs:left-1/2 top-0 xs:top-14 xs:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] xs:rounded-lg p-10">
             <form class="flex flex-col gap-6  justify-center h-full">
                 
@@ -48,7 +48,7 @@ export default{
         }
     },
     mounted(){
-        gsap.from(this.boxref,{duration:0.3,y:-100,opacity:0})
+        gsap.from(this.boxref,{duration:0.3,opacity:0})
     },
     setup() {
     const boxref = ref(null);
