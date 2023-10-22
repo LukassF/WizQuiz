@@ -1,5 +1,5 @@
 <template>
-    <section class="grid min-h-full grid-cols-1 grid-rows-[2fr_2fr_6fr] sm/2:grid-rows-[2fr_2fr_4fr] lg/2:grid-cols-2 lg/2:grid-rows-[minmax(0,4fr)_minmax(0,5fr)] gap-0 rounded-xl overflow-hidden">
+    <section class="grid grid-cols-1 grid-rows-[2fr_2fr_6fr] sm/2:grid-rows-[2fr_2fr_4fr] lg/2:grid-cols-2 lg/2:grid-rows-[minmax(0,4fr)_minmax(0,5fr)] gap-0 rounded-xl overflow-hidden">
 
 <Profile />
 <Chart />

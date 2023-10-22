@@ -1,21 +1,23 @@
 <template>
-  <ModifyProfile v-if="$store.state.showModifyProfile"/>
+  <ModifyProfile v-if="$store.state.showModifyProfile" />
   <article
-    class="p-3 md:p-5 overflow-hidden bg-white  grid grid-rows-[1fr_5fr] border-t border-l-0 lg/2:border-l lg/2:border-t-0 border-slate-300"
+    class="p-3 md:p-5 overflow-hidden bg-white grid grid-rows-[1fr_5fr] border-t border-l-0 lg/2:border-l lg/2:border-t-0 border-slate-300"
   >
-  <div>
-     <h1 class="h-full text-lg font-semibold flex justify-between items-center">
-      My profile
-      <button
-        class="bg-main-blue px-4 py-[5px] rounded-xl text-white text-sm font-normal"
-        @click="openModifyProfile()"
+    <div>
+      <h1
+        class="h-full text-lg font-semibold flex justify-between lg/2:justify-start gap-6 items-center"
       >
-        Edit info
-      </button>
-    </h1>
-  </div>
-  <div class="md/2:px-3 py-2 md/2:py-0">
-    <div class="flex items-center py-3 gap-3">
+        My profile
+        <button
+          class="border border-main-blue px-4 py-[4px] rounded-xl text-main-blue hover:bg-main-blue hover:text-white transition-all text-sm font-normal"
+          @click="openModifyProfile()"
+        >
+          Edit info
+        </button>
+      </h1>
+    </div>
+    <div class="md/2:px-3 py-2 md/2:py-0">
+      <div class="flex items-center py-3 gap-3">
         <div
           class="w-[50px] md/2:w-[90px] aspect-square rounded-full overflow-hidden drop-shadow-md"
         >
@@ -37,19 +39,31 @@
         >
           <li>
             <h3>0</h3>
-            <p class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap">Created</p>
+            <p
+              class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap"
+            >
+              Created
+            </p>
           </li>
           <li>
             <h3>0</h3>
-            <p class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap">Completed</p>
+            <p
+              class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap"
+            >
+              Completed
+            </p>
           </li>
           <li>
             <h3>0</h3>
-            <p class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap">Shared</p>
+            <p
+              class="text-[10px] sm/2:text-xs text-stone-700 whitespace-nowrap"
+            >
+              Shared
+            </p>
           </li>
         </ul>
       </div>
-  </div>
+    </div>
     <!-- <h1 class="text-lg font-semibold flex justify-between items-center">
       My profile
       <button
@@ -65,16 +79,16 @@
 </template>
 
 <script lang="ts">
-import ModifyProfile from './ModifyProfile.vue';
-export default{
-    name:'profile',
-    components:{
-      ModifyProfile
+  import ModifyProfile from "./ModifyProfile.vue";
+  export default {
+    name: "profile",
+    components: {
+      ModifyProfile,
     },
-    methods:{
-      openModifyProfile(){
-        this.$store.commit('setShowModifyProfile',true)
-      }
-    }
-}
+    methods: {
+      openModifyProfile() {
+        this.$store.commit("setShowModifyProfile", true);
+      },
+    },
+  };
 </script>

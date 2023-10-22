@@ -3,7 +3,7 @@
         class="order-first lg:order-auto p-3 md:p-5 bg-white grid grid-rows-[1fr_5fr]"
       >
       <div>
-<h1 class="h-full text-lg font-semibold flex justify-between items-center">Overview <buttton class="hover:text-stone-500 cursor-pointer lg:hidden" @click="openAside()"><i class="fa fa-bars"></i></buttton></h1>
+<h1 class="h-full text-lg font-semibold flex justify-between items-center">Overview</h1>
       </div>
   <div class="flex items-center justify-center">
     <canvas id="chart-canvas" class="max-w-[100%] max-h-[100%] lg:max-h-[90%]"></canvas>
@@ -68,10 +68,6 @@ export default{
     const ctx = document.getElementById('chart-canvas');
     new Chart(ctx, planetChartData);
   },
-  methods:{
-    openAside(){
-        this.$store.commit('setShowAside')
-    }
-  }
+ 
 }
 </script>
