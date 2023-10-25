@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative xs:m-0 xs:w-full px-5 py-3 xs:px-10 xs:py-5 flex justify-between items-center z-100 bg-white xs:bg-transparent m-5 w-auto rounded-2xl"
+    class="relative xs:m-0 xs:w-full px-5 py-3 xs:px-10 xs:py-5 flex justify-between items-center z-[1000] bg-white xs:bg-transparent m-5 w-auto rounded-2xl"
   >
     <svg
       height="38"

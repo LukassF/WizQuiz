@@ -1,7 +1,7 @@
 <template>
   <ModifyProfile v-if="$store.state.showModifyProfile" />
   <article
-    class="p-3 md:p-5 overflow-hidden bg-white grid grid-rows-[1fr_5fr] border-t border-l-0 lg/2:border-l lg/2:border-t-0 border-slate-300"
+    class="p-3 md:p-5 items-center overflow-hidden bg-white grid grid-rows-[1fr_5fr] border-t border-l-0 lg/2:border-l lg/2:border-t-0 border-slate-300"
   >
     <div>
       <h1
@@ -16,7 +16,7 @@
         </button>
       </h1>
     </div>
-    <div class="md/2:px-3 py-2 md/2:py-0">
+    <div class="md/2:px-3 py-2 md/2:py-0 flex flex-col justify-evenly h-full">
       <div class="flex items-center py-3 gap-3">
         <div
           class="w-[50px] md/2:w-[90px] aspect-square rounded-full overflow-hidden drop-shadow-md"
@@ -27,15 +27,17 @@
           />
         </div>
         <ul class="flex flex-col gap-2">
-          <li class="font-medium text-lg">Username</li>
-          <li class="-mt-2 text-sm font-light text-stone-600 line-clamp-1">
+          <li class="font-medium text-md md:text-lg">Username</li>
+          <li
+            class="-mt-2 text-xs md:text-sm font-light text-stone-600 line-clamp-1"
+          >
             Email@ElementInternals.com
           </li>
         </ul>
       </div>
-      <div class="md/2:px-3 py-3 md/2:py-2">
+      <div class="py-3 md/2:py-2">
         <ul
-          class="grid grid-cols-3 gap-2 [&>*]:bg-stone-100 [&>*]:drop-shadow-md [&>*]:px-3 [&>*]:py-2 [&>*]:flex [&>*]:flex-col [&>*]:rounded-xl"
+          class="grid grid-cols-3 gap-4 [&>*]:bg-stone-100 [&>*]:drop-shadow-md [&>*]:px-3 [&>*]:py-2 [&>*]:flex [&>*]:flex-col [&>*]:rounded-xl"
         >
           <li>
             <h3>0</h3>

@@ -11,7 +11,7 @@
       </div>
 
       <div
-        class="border-[3px] border-featured w-full min-h-[140px] rounded-2xl mt-3 p-4 grid grid-cols-1 sm/2:grid-cols-2 md:grid-cols-3 lg/2:grid-cols-[2fr_3fr_3fr] gap-5"
+        class="border-[2px] border-featured w-full min-h-[140px] rounded-2xl mt-3 p-4 grid grid-cols-1 sm/2:grid-cols-2 md:grid-cols-3 lg/2:grid-cols-[2fr_3fr_3fr] gap-5"
       >
         <div class="flex flex-col justify-center items-center">
           <h1 class="text-2xl font-semibold m-0 text-featured">FREE</h1>

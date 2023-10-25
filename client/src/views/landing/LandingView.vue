@@ -1,18 +1,27 @@
 <template>
-
-  <section class="pt-40 xs:pt-0 grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 relative z-10 px-5 lg:px-10 min-h-[400px] md:pt-5 ">
+  <section
+    class="pt-40 xs:pt-0 grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 relative z-10 px-5 lg:px-10 min-h-[400px] md:pt-5"
+  >
     <article
       class="p-2 xs:p-8 lg:p-20 flex flex-col justify-center md:justify-evenly gap-6 items-center"
     >
       <p
         class="text-center text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-600"
       >
-        <em class="leading-snug">Test your wisdom and intellect with WizQuiz!</em>
-  </p>
+        <em class="leading-snug"
+          >Test your wisdom and intellect with WizQuiz!</em
+        >
+      </p>
 
-      <button class="px-10 xs:px-20 py-2 bg-featured hover:bg-indigo-600 text-white font-semibold rounded-xl">Get started</button>
+      <button
+        class="px-10 xs:px-20 py-2 bg-featured hover:bg-indigo-600 text-white font-semibold rounded-xl"
+      >
+        Get started
+      </button>
     </article>
-    <article class="mt-5 xs:-mt-24 p-5 xs:p-20 sm:mt-0 sm:p-8 relative flex justify-center items-center">
+    <article
+      class="mt-5 xs:-mt-24 p-5 xs:p-20 sm:mt-0 sm:p-8 relative flex justify-center items-center"
+    >
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -245,13 +254,17 @@
   </section>
 
   <hr />
-  <section class="py-10 px-6 xs:px-10 md:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20">
-    <div class=" text-[19px] xs:text-[22px] sm:text-[30px] w-3/4 text-center text-slate-700">
+  <section
+    class="py-10 px-6 xs:px-10 md:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20"
+  >
+    <div
+      class="text-[19px] xs:text-[22px] sm:text-[30px] w-3/4 text-center text-slate-700"
+    >
       Here&apos;s how WizQuiz lets you test yourself against friends! Just
       follow these steps and compete!
     </div>
     <article
-      class="grid grid-cols-1  sm/2:grid-cols-2 justify-items-center xl:grid-cols-4 w-full gap-12 pt-20 pb-10 [&>*]:bg-white [&>*]:aspect-[2/3] [&>*]:drop-shadow-xl [&>*]:rounded-xl [&>*]:grid [&>*]:grid-rows-2 [&>*]:p-8 [&>*]:gap-5 [&>*]:min-w-[240px] [&>*]:max-w-[260px]  sm:[&>*]:max-w-[320px]"
+      class="grid grid-cols-1 sm/2:grid-cols-2 justify-items-center xl:grid-cols-4 w-full gap-12 pt-20 pb-10 [&>*]:bg-white [&>*]:aspect-[2/3] [&>*]:drop-shadow-xl [&>*]:rounded-xl [&>*]:grid [&>*]:grid-rows-2 [&>*]:p-8 [&>*]:gap-5 [&>*]:min-w-[240px] [&>*]:max-w-[260px] sm:[&>*]:max-w-[320px]"
     >
       <div>
         <div class="flex justify-center items-center">
@@ -1005,31 +1018,44 @@
         <div class="h-full overflow-hidden">
           <h1 class="font-semibold">Share & compete</h1>
           <p class="font-light text-sm mt-3">
-            Interested in how you compare to your friends, or want to have
-            fun together? We offer seamless sharing functionality just for that.
+            Interested in how you compare to your friends, or want to have fun
+            together? We offer seamless sharing functionality just for that.
           </p>
         </div>
       </div>
     </article>
   </section>
 
-  <hr/>
+  <hr />
 
-  <section id="pricing" class="py-10 px-6 md:px-10 lg:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20 relative z-20">
-    <div class="text-[19px] xs:text-[22px] sm:text-[30px] w-3/4 text-center text-slate-700">
-      Use WizQuiz wisely! Choose one of the 3 tiers below and reap your benefits!
+  <section
+    id="pricing"
+    class="py-10 px-6 md:px-10 lg:px-20 flex flex-col items-center mt-5 xs:mt-10 sm:mt-20 relative z-20"
+  >
+    <div
+      class="text-[19px] xs:text-[22px] sm:text-[30px] w-3/4 text-center text-slate-700"
+    >
+      Use WizQuiz wisely! Choose one of the 3 tiers below and reap your
+      benefits!
     </div>
 
-    <article class="grid grid-cols-1 lg/2:grid-cols-3 w-full gap-10 xl:gap-20 pt-20 lg:pt-40 pb-10 px-0 lg:px-6 xl:px-20">
-      <div class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col items-center p-8 gap-5 min-w-[260px]">
-        
+    <article
+      class="grid grid-cols-1 lg/2:grid-cols-3 w-full gap-10 xl:gap-20 pt-20 lg:pt-40 pb-10 px-0 lg:px-6 xl:px-20"
+    >
+      <div
+        class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
+      >
         <div class="flex flex-col items-center">
-          <h1 class="text-3xl font-semibold mb-5">FREE</h1>
-          <span class="text-4xl font-semibold text-stone-700">0.00$</span>
+          <h1 class="text-3xl font-semibold mb-5 overflow-hidden">FREE</h1>
+          <span class="text-4xl font-semibold text-stone-700 overflow-hidden"
+            >0.00$</span
+          >
           <span class="text-sm text-stone-800 font-light">per month</span>
         </div>
 
-        <ul class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3">
+        <ul
+          class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3"
+        >
           <li><Tick />3 quizes per day</li>
           <li><Tick />1 quiz creation per day</li>
           <li><X />No sharing</li>
@@ -1037,19 +1063,28 @@
           <li><X />No extended quiz features</li>
         </ul>
 
-        <button class="bg-main-blue text-white px-10 py-2 rounded-xl hover:bg-blue-600 transition-all">
+        <button
+          class="bg-main-blue text-white px-10 py-2 rounded-xl hover:bg-blue-600 transition-all"
+        >
           Purchase
         </button>
       </div>
-      <div class="lg/2:aspect-[2/3.4] lg:-mt-20 bg-featured rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col items-center p-8 gap-5 min-w-[260px]">
-        
+      <div
+        class="lg/2:aspect-[2/3.4] lg:-mt-20 bg-featured rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex justify-center flex-col items-center p-8 gap-5 min-w-[260px]"
+      >
         <div class="flex flex-col items-center">
-          <h1 class="text-3xl font-semibold text-white mb-5">STANDARD</h1>
-          <span class="text-4xl font-semibold text-stone-100">9.99$</span>
+          <h1 class="text-3xl font-semibold text-white mb-5 overflow-hidden">
+            STANDARD
+          </h1>
+          <span class="text-4xl font-semibold text-stone-100 overflow-hidden"
+            >9.99$</span
+          >
           <span class="text-sm text-stone-200">per month</span>
         </div>
 
-        <ul class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3 text-white">
+        <ul
+          class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3 text-white"
+        >
           <li><Tick />Infinite quizes</li>
           <li><Tick />Infinite quiz creations</li>
           <li><Tick />Unlimited sharing</li>
@@ -1057,19 +1092,26 @@
           <li><X />No extended quiz features</li>
         </ul>
 
-        <button class="bg-white text-featured px-10 py-2 rounded-xl hover:bg-stone-200 transition-all">
+        <button
+          class="bg-white text-featured px-10 py-2 rounded-xl hover:bg-stone-200 transition-all"
+        >
           Purchase
         </button>
       </div>
-      <div class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col items-center p-8 gap-5 min-w-[260px]">
-        
+      <div
+        class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
+      >
         <div class="flex flex-col items-center">
-          <h1 class="text-3xl font-semibold mb-5">PREMIUM</h1>
-          <span class="text-4xl font-semibold text-stone-700">19.99$</span>
+          <h1 class="text-3xl font-semibold mb-5 overflow-hidden">PREMIUM</h1>
+          <span class="text-4xl font-semibold text-stone-700 overflow-hidden"
+            >19.99$</span
+          >
           <span class="text-sm font-light">per month</span>
         </div>
 
-        <ul class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3">
+        <ul
+          class="p-0 m-0 py-3 [&>*]:flex [&>*]:gap-2 [&>*]:text-sm flex flex-col gap-3"
+        >
           <li><Tick />Infinite quizes</li>
           <li><Tick />Infinite quiz creations</li>
           <li><Tick />Unlimited sharing</li>
@@ -1077,7 +1119,9 @@
           <li><Tick />Extended quiz features</li>
         </ul>
 
-        <button class="bg-main-blue text-white px-10 py-2 rounded-xl hover:bg-blue-600 transition-all">
+        <button
+          class="bg-main-blue text-white px-10 py-2 rounded-xl hover:bg-blue-600 transition-all"
+        >
           Purchase
         </button>
       </div>
@@ -1086,13 +1130,14 @@
 </template>
 
 <script lang="ts">
-import X from './components/X.vue';
-import Tick from './components/Tick.vue';
+  import X from "./components/X.vue";
+  import Tick from "./components/Tick.vue";
 
-export default {
-  name: "landing",
-  components:{
-X,Tick
-  }
-};
+  export default {
+    name: "landing",
+    components: {
+      X,
+      Tick,
+    },
+  };
 </script>

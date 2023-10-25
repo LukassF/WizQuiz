@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed z-[200] px-5 w-[180px] break-all text-center py-2 drop-shadow-lg bg-black bg-opacity-90 text-white rounded-2xl text-sm"
+    class="fixed z-[200] px-5 w-[180px] break-all text-center py-2 drop-shadow-lg bg-black bg-opacity-70 text-white rounded-xl text-sm"
     ref="tooltipRef"
     :style="'visibility:' + (tooltipParams.show ? 'visible;' : 'hidden;')"
   >

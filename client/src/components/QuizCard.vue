@@ -2,7 +2,8 @@
   <div
     @mousemove="setTooltip($event)"
     @mouseleave="setTooltip($event, true)"
-    class="bg-white rounded-xl h-full grid grid-rows-2 drop-shadow-lg overflow-hidden cursor-pointer"
+    class="bg-white rounded-xl h-full grid grid-rows-2 drop-shadow-lg overflow-hidden cursor-pointer max-h-[290px]"
+    :style="minH && 'min-height:185px;'"
   >
     <div class="flex justify-center items-center overflow-hidden">
       <div
@@ -13,10 +14,10 @@
       </div>
     </div>
     <div class="py-2 px-4 flex flex-col justify-center">
-      <h1 class="break-all text-ellipsis line-clamp-1">
+      <h1 class="break-all text-ellipsis line-clamp-1 text-sm">
         Countries of the world
       </h1>
-      <span class="text-stone-700 font-light text-sm">By Dozerson</span>
+      <span class="text-stone-700 font-light text-xs">By Dozerson</span>
       <div class="flex justify-between mt-2">
         <button class="text-sm text-main-blue hover:text-blue-300">
           Start
@@ -42,7 +43,7 @@
         color: "#",
       };
     },
-    props: ["isMine"],
+    props: ["isMine", "minH"],
     mounted() {
       for (let i = 0; i < 6; i++)
         this.color +=

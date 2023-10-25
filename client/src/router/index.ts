@@ -1,19 +1,26 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import LandingView from '../views/landing/LandingView.vue'
-import DashboardView from '../views/dashboard/DashboardView.vue'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import LandingView from "../views/landing/LandingView.vue";
+import DashboardView from "../views/dashboard/DashboardView.vue";
+import CreateView from "../views/create/CreateView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'landing',
-    component: LandingView
+    path: "/",
+    name: "landing",
+    component: LandingView,
   },
 
   {
-    path:'/dashboard',
-    name:'dashboard',
-    component: DashboardView
-  }
+    path: "/dashboard",
+    name: "dashboard",
+    component: DashboardView,
+  },
+
+  {
+    path: "/create",
+    name: "create",
+    component: CreateView,
+  },
 
   // {
   //   path: '/about',
@@ -23,11 +30,11 @@ const routes: Array<RouteRecordRaw> = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // }
-]
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes:routes
-})
+  routes: routes,
+});
 
-export default router
+export default router;

@@ -13,6 +13,7 @@ export default createStore({
     showLogin: false,
     showSignup: false,
     showAside: true,
+    showQuizCreator: false,
     showModifyProfile: false,
     tooltipParams: { x: 0, y: 0, show: false, content: "" },
   },
@@ -28,8 +29,9 @@ export default createStore({
       state.showSignup = value;
     },
 
-    setShowAside(state) {
-      state.showAside = !state.showAside;
+    setShowAside(state, value) {
+      if (value === undefined) state.showAside = !state.showAside;
+      else state.showAside = value;
     },
 
     setShowModifyProfile(state, value) {
@@ -38,6 +40,10 @@ export default createStore({
 
     setTooltipParams(state, value) {
       state.tooltipParams = value;
+    },
+
+    setShowQuizCreator(state, value) {
+      state.showQuizCreator = value;
     },
   },
   actions: {},
