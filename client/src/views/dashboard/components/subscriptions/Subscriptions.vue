@@ -1,7 +1,7 @@
 <!-- IMPLEMENT CANCEL FOR BOTH BUTTONS -->
 
 <template>
-  <section class="flex flex-col gap-0 rounded-xl overflow-hidden">
+  <section class="flex flex-col gap-0 rounded-xl h-full overflow-y-scroll">
     <article class="border-b p-5">
       <div>
         <h1 class="text-lg font-semibold w-full">My subscription</h1>

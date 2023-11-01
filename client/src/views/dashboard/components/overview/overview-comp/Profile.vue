@@ -1,5 +1,4 @@
 <template>
-  <ModifyProfile v-if="$store.state.showModifyProfile" />
   <article
     class="p-3 md:p-5 items-center overflow-hidden bg-white grid grid-rows-[1fr_5fr] border-t border-l-0 lg/2:border-l lg/2:border-t-0 border-slate-300"
   >

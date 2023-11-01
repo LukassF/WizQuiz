@@ -1,6 +1,7 @@
 <template>
   <Tooltip />
   <NameQuiz v-if="$store.state.showQuizCreator" />
+  <ModifyProfile v-if="$store.state.showModifyProfile" />
   <main
     @click="openAside($event)"
     class="group bg-white m-0 xs:m-3 xs:rounded-xl grid lg:grid-cols-[2fr_7fr] gap-3 relative z-[20] p-3 sm/2:p-5 shadow-[2.0px_2.0px_1.0px_3px_rgba(0,0,0,0.18)]"
@@ -82,6 +83,7 @@
   import Find from './components/find/Find.vue'
   import Tooltip from '../../components/Tooltip.vue'
   import NameQuiz from './components/create/NameQuiz.vue'
+  import ModifyProfile from './components/overview/overview-comp/ModifyProfile.vue'
 
   export default {
     name: "dashboard",
@@ -98,7 +100,8 @@
      MyQuizes,
      Find,
      Tooltip,
-     NameQuiz
+     NameQuiz,
+     ModifyProfile
     },
     mounted(){
       this.aside = document.getElementById('aside')

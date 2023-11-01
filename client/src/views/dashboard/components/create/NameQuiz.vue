@@ -5,15 +5,15 @@
   >
     <article
       ref="quizref"
-      class="absolute z-20 h-full w-full xs:h-[80%] xs:aspect-[4/5] xs:w-auto left-0 xs:left-1/2 top-0 xs:top-14 xs:-translate-x-1/2 overflow-y-auto bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] xs:rounded-lg p-10"
+      class="overflow-y-auto absolute z-20 h-full w-full box-full:h-[80%] max-h-[820px] box-full:aspect-[4/5] box-full:w-auto left-0 box-full:left-1/2 top-1/2 -translate-y-1/2 -translate-x-0 box-full:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] box-full:rounded-lg p-10"
     >
-      <form class="grid grid-rows-[1fr_8fr] h-full relative">
+      <form class="grid grid-rows-[1fr_8fr] h-full relative" autocomplete="off">
         <div>
           <h1 class="text-2xl font-semibold relative">
             Quiz info
             <button
               @click="closeQuizCreator()"
-              class="absolute right-0 top-0 font-semibold text-lg"
+              class="absolute right-0 top-0 font-semibold text-lg text-slate-400"
             >
               <i class="fa fa-arrow-left"></i>
             </button>
@@ -31,14 +31,14 @@
             <input
               type="text"
               placeholder="Quiz name"
-              class="h-full px-3 outline-none max-h-[65px] rounded-xl border border-solid border-slate-400 w-full"
+              class="h-full px-3 text-slate-600 outline-none max-h-[65px] rounded-xl border border-solid border-slate-400 w-full"
             />
           </div>
           <div class="flex items-center">
             <input
               type="text"
               placeholder="Quiz description"
-              class="h-full px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
+              class="h-full px-3 text-slate-600 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
             />
           </div>
           <div class="flex items-center gap-3">

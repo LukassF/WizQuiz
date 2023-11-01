@@ -23,3 +23,18 @@ body {
   border-radius: 10px;
   background-color: grey;
 }
+
+.p-toast-message {
+  padding: 10px !important;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.p-toast-message-content {
+  display: flex;
+  gap: 10px;
+}
+
+.p-icon {
+  width: 25px;
+}

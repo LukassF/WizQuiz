@@ -1,4 +1,6 @@
 import { createStore } from "vuex";
+import axios from "axios";
+const BACKEND_URL = "http://localhost/website/api/index.php";
 
 // interface storeState {
 //   showLogin: boolean;
@@ -45,7 +47,38 @@ export default createStore({
     setShowQuizCreator(state, value) {
       state.showQuizCreator = value;
     },
+
+    signUp() {},
+
+    logIn() {},
   },
-  actions: {},
+  actions: {
+    async SIGN_UP({ commit }, args: signupArgs) {
+      const response = await axios.post(
+        `${BACKEND_URL}?request=signup&method=insertUser`,
+        {
+          body: args,
+        }
+      );
+
+      commit("signUp");
+
+      return response.data;
+    },
+
+    async LOG_IN({ commit }, args: loginArgs) {
+      const response = await axios.post(
+        `${BACKEND_URL}?request=login&method=logInUser`,
+        {
+          body: args,
+        }
+      );
+
+      console.log(response);
+      commit("logIn");
+
+      return response.data;
+    },
+  },
   modules: {},
 });

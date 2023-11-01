@@ -1,6 +1,7 @@
 <?php
 
 class DBH {
+    
     public static $instance;
     private $host = "localhost";
     private $dbname = "wizquiz";

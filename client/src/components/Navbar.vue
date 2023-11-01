@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative xs:m-0 xs:w-full px-5 py-3 xs:px-10 xs:py-5 flex justify-between items-center z-[1000] bg-white xs:bg-transparent m-5 w-auto rounded-2xl"
+    class="relative xs:m-0 xs:w-full px-5 py-3 xs:px-10 xs:py-5 flex justify-between items-center z-[800] bg-white xs:bg-transparent m-5 w-auto rounded-2xl"
   >
     <svg
       height="38"
@@ -66,7 +66,9 @@
       class="flex flex-col text-center text-main-blue bg-white p-5 gap-5 rounded-2xl shadow-[2.0px_2.0px_2.0px_2px_rgba(0,0,0,0.18)]"
     >
       <router-link to="/">Product</router-link>
-      <span class="cursor-pointer" @click="goToPricing()">Pricing</span>
+      <router-link to="/" class="cursor-pointer" @click="goToPricing()"
+        >Pricing</router-link
+      >
       <span class="cursor-pointer" @click="showLogin()">Login</span>
       <button
         class="bg-main-blue hover:bg-blue-600 transition-all text-white px-6 py-2 rounded-full text-sm font-medium"

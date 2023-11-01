@@ -6,7 +6,7 @@ class SignupContr {
     private $password;
     private $model;
 
-    public function __construct($params, $model)
+    public function __construct($params,SignupModel $model)
     {
         $this->username = $params['username'];
         $this->email = $params['email'];
@@ -15,21 +15,22 @@ class SignupContr {
     }
 
     public function insertUser(){
-        $log = '';
+        $log = [];
         if ($this->are_fields_empty()) {
-            $log = "Fields can't be empty!";
+            array_push($log,"Fields can't be empty!");
         }
-         elseif ($this->email_invalid()) {
-            $log = "Email is invalid or taken!";
-        } elseif ($this->username_taken()) {
-            $log = "Username is taken!";
+         if ($this->email_invalid()) {
+            array_push($log,"Email is invalid or taken!");
         } 
-        else {
-            $log = 'Signup successfull!';
+        if ($this->username_taken()) {
+            array_push($log,"Username is taken!");
+        } 
+        elseif(!$this->are_fields_empty() && ! $this->email_invalid() && !$this->username_taken()){
+            array_push($log ,'Signup successfull!');
         }
 
-        if (!empty($log) && $log !== 'Signup successfull!') {
-            return $log;
+        if (!empty($log) && !in_array('Signup successfull!',$log)) {
+            return [false,$log];
         }
 
         return [$this->model->insertUserDB(

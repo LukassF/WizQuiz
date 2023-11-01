@@ -1,18 +1,18 @@
 <template>
   <div
     @click="closeModifyProfile($event)"
-    class="fixed overflow-y-auto overflow-x-hidden left-0 top-0 w-screen h-screen bg-black bg-opacity-60 z-50 grid place-content-center"
+    class="fixed overflow-y-auto overflow-x-hidden left-0 top-0 w-screen h-screen bg-black bg-opacity-60 z-[1200] grid place-content-center"
   >
     <div
       id="box"
-      class="overflow-y-auto absolute grid grid-rows-[1fr_8fr] items-center gap-3 z-[3000] h-full w-full xs:h-[80%] xs:aspect-[4/5] xs:w-auto left-0 xs:left-1/2 top-0 xs:top-14 xs:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] xs:rounded-lg p-8"
+      class="overflow-y-auto absolute z-20 h-full w-full box-full:h-[80%] max-h-[820px] box-full:aspect-[4/5] box-full:w-auto left-0 box-full:left-1/2 top-1/2 -translate-y-1/2 -translate-x-0 box-full:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] box-full:rounded-lg p-10"
     >
       <div class="w-full">
         <h1 class="w-full text-2xl font-semibold relative">
           Modify profile
           <button
             @click="closeModifyProfile()"
-            class="absolute right-0 top-0 font-semibold text-lg"
+            class="absolute right-0 top-0 font-semibold text-lg text-slate-400"
           >
             <i class="fa fa-arrow-left"></i>
           </button>
@@ -27,9 +27,9 @@
         <div class="flex items-center">
           <div class="w-full h-[1px] bg-slate-400"></div>
         </div>
-        <div class="relative items-stretch justify-center flex">
+        <div class="relative items-stretch justify-center flex bg-cover">
           <div
-            class="min-h-[100px] aspect-square rounded-full relative overflow-hidden bg-cover bg-center cursor-pointer"
+            class="aspect-square rounded-full relative overflow-hidden bg-cover bg-center cursor-pointer"
             :style="'background-image:url(' + imageBase64 + ');'"
             @click="chooseFile()"
           >
@@ -37,7 +37,7 @@
               type="file"
               ref="fileRef"
               @change="setNewImage($event)"
-              class="hidden"
+              class="hidden text-slate-600"
             />
           </div>
         </div>
@@ -46,7 +46,7 @@
             value="Username"
             type="text"
             placeholder="Username"
-            class="h-full px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
+            class="h-full px-3 text-slate-600 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
           />
         </div>
         <div class="flex items-center">
@@ -54,7 +54,7 @@
             value="Email@ElementInternals.com"
             type="email"
             placeholder="Email"
-            class="h-full px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
+            class="h-full text-slate-600 px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
           />
         </div>
         <div class="flex items-center">
@@ -69,40 +69,6 @@
           </button>
         </div>
       </div>
-
-      <!-- <div>
-        <div
-          @click="chooseFile()"
-          class="cursor-pointer w-[120px] aspect-square rounded-full overflow-hidden drop-shadow-lg mt-5 transition-all hover:shadow-[0.0px_0.0px_10.0px_3px_rgba(0,0,0,0.08)]"
-        >
-          <img :src="imageBase64" class="w-full h-full object-cover" />
-          <input type="file" ref="fileRef" @change="setNewImage($event)" />
-        </div>
-      </div>
-
-      <form class="flex flex-col gap-6 w-full justify-center h-full">
-        <div class="flex flex-col gap-5">
-          <input
-            value="Username"
-            type="text"
-            placeholder="Username"
-            class="bg-slate-100 h-[45px] px-3 outline-none rounded-2xl border border-solid border-slate-400 drop-shadow-md"
-          />
-          <input
-            value="Email@ElementInternals.com"
-            type="email"
-            placeholder="Email"
-            class="bg-slate-100 h-[45px] px-3 outline-none rounded-2xl border border-solid border-slate-400 drop-shadow-md"
-          />
-
-          <button
-            type="submit"
-            class="hover:bg-indigo-500 transition-all h-[45px] bg-featured rounded-2xl text-white font-bold"
-          >
-            Confirm
-          </button>
-        </div>
-      </form> -->
     </div>
   </div>
 </template>

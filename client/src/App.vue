@@ -1,4 +1,5 @@
 <template>
+  <Toast position="bottom-left" />
   <main id="main" class="overflow-hidden w-screen relative">
     <Login v-if="$store.state.showLogin" />
     <Signup v-if="$store.state.showSignup" />

@@ -14,7 +14,7 @@
       </p>
 
       <button
-        class="px-10 xs:px-20 py-2 bg-featured hover:bg-indigo-600 text-white font-semibold rounded-xl"
+        class="px-10 xs:px-16 py-2 bg-featured hover:bg-indigo-600 text-white font-semibold rounded-xl"
       >
         Get started
       </button>
