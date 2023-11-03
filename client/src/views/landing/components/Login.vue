@@ -52,8 +52,13 @@
               type="password"
               placeholder="Password"
               name="password"
-              class="h-full text-slate-600 px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
+              class="h-full text-slate-600 px-3 outline-none rounded-xl max-h-[65px] border border-solid border-slate-400 w-full pr-[4rem]"
             />
+            <i
+              @click="togglePassword()"
+              :style="'right:' + (password_error ? '2.5rem' : '0.75rem')"
+              class="fa fa-eye absolute cursor-pointer right-3 top-1/2 transition-all -translate-y-1/2 bg-opacity-50 text-slate-400 text-[17px] grid place-content-center h-[17px] rounded-full aspect-square"
+            ></i>
             <i
               :style="'right:' + (password_error ? '0.75rem' : '-20px')"
               class="fa fa-close absolute right-3 top-1/2 transition-all -translate-y-1/2 bg-[rgb(252_90_90)] bg-opacity-50 text-white text-[8px] grid place-content-center h-[17px] rounded-full aspect-square"
@@ -63,6 +68,8 @@
             <div class="flex gap-2 px-2">
               <div class="relative">
                 <input
+                  :checked="remember"
+                  @change="rememberMe($event)"
                   type="checkbox"
                   id="rememberme"
                   name="remember"
@@ -130,6 +137,25 @@
         return this.logs;
       },
     },
+
+    mounted() {
+      gsap.from(this.boxref, { duration: 0.3, opacity: 0 });
+
+      if (!window.localStorage.getItem("remembered_user")) return;
+
+      const local_storage = JSON.parse(
+        window.localStorage.getItem("remembered_user")!
+      );
+
+      this.remember = true;
+      this.username = local_storage.username;
+      this.password = local_storage.password;
+
+      //@ts-ignore
+      this.username_ref_login.value = this.username;
+      //@ts-ignore
+      this.password_ref_login.value = this.password;
+    },
     methods: {
       closeLogin(e?: Event) {
         if (e?.target === e?.currentTarget || !e)
@@ -154,7 +180,28 @@
 
         this.logs = result.logs;
         this.status = result.status;
+
         if (!result.status) this.validateForm();
+        else {
+          window.localStorage.setItem(
+            "current_user",
+            JSON.stringify(result.user)
+          );
+
+          if (this.remember)
+            window.localStorage.setItem(
+              "remembered_user",
+              JSON.stringify({
+                username: this.username,
+                password: this.password,
+              })
+            );
+
+          if (result.token[0]) {
+            this.$cookies.set("token", result.token[1]);
+            this.$store.commit("setIsAuthenticated", true);
+          }
+        }
       },
 
       validateForm(): boolean {
@@ -215,9 +262,19 @@
             break;
         }
       },
-    },
-    mounted() {
-      gsap.from(this.boxref, { duration: 0.3, opacity: 0 });
+
+      togglePassword() {
+        const type = (this.password_ref_login! as HTMLInputElement).type;
+        (this.password_ref_login! as HTMLInputElement).type =
+          type === "text" ? "password" : "text";
+      },
+
+      rememberMe(e: any) {
+        this.remember = e.target.checked;
+
+        if (!e.target.checked)
+          window.localStorage.removeItem("remembered_user");
+      },
     },
     setup() {
       const boxref = ref(null);

@@ -18,6 +18,8 @@ export default createStore({
     showQuizCreator: false,
     showModifyProfile: false,
     tooltipParams: { x: 0, y: 0, show: false, content: "" },
+
+    isAuthenticated: false,
   },
   getters: {},
   mutations: {
@@ -51,33 +53,62 @@ export default createStore({
     signUp() {},
 
     logIn() {},
+
+    setIsAuthenticated(state, value) {
+      state.isAuthenticated = value;
+    },
   },
   actions: {
     async SIGN_UP({ commit }, args: signupArgs) {
-      const response = await axios.post(
-        `${BACKEND_URL}?request=signup&method=insertUser`,
-        {
-          body: args,
-        }
-      );
+      try {
+        const response = await axios.post(
+          `${BACKEND_URL}?request=signup&method=insertUser`,
+          {
+            body: args,
+          }
+        );
 
-      commit("signUp");
+        commit("signUp");
 
-      return response.data;
+        return response.data;
+      } catch (err: any) {
+        console.log(err);
+      }
     },
 
     async LOG_IN({ commit }, args: loginArgs) {
-      const response = await axios.post(
-        `${BACKEND_URL}?request=login&method=logInUser`,
-        {
-          body: args,
-        }
-      );
+      try {
+        const response = await axios.post(
+          `${BACKEND_URL}?request=login&method=logInUser`,
+          {
+            body: args,
+          }
+        );
 
-      console.log(response);
-      commit("logIn");
+        commit("logIn");
+        console.log(response.data);
 
-      return response.data;
+        return response.data;
+      } catch (err: any) {
+        console.log(err);
+      }
+    },
+
+    async SET_AUTHENTICATED({ commit }, token) {
+      try {
+        const result = await axios.post(
+          `${BACKEND_URL}?request=auth&method=checkToken`,
+          {
+            body: token,
+          }
+        );
+
+        if (!result.data) window.localStorage.removeItem("current_user");
+
+        commit("setIsAuthenticated", result.data);
+      } catch (err: any) {
+        console.log(err);
+      }
     },
   },
   modules: {},

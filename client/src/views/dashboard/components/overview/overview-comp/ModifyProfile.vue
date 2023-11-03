@@ -5,7 +5,7 @@
   >
     <div
       id="box"
-      class="overflow-y-auto absolute z-20 h-full w-full box-full:h-[80%] max-h-[820px] box-full:aspect-[4/5] box-full:w-auto left-0 box-full:left-1/2 top-1/2 -translate-y-1/2 -translate-x-0 box-full:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] box-full:rounded-lg p-10"
+      class="grid grid-rows-[1fr_10fr] overflow-y-auto absolute z-20 h-full w-full box-full:h-[80%] max-h-[820px] box-full:aspect-[4/5] box-full:w-auto left-0 box-full:left-1/2 top-1/2 -translate-y-1/2 -translate-x-0 box-full:-translate-x-1/2 bg-white shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] box-full:rounded-lg p-10"
     >
       <div class="w-full">
         <h1 class="w-full text-2xl font-semibold relative">
@@ -22,14 +22,14 @@
         </p>
       </div>
       <div
-        class="h-full w-full grid grid-rows-[1fr_4fr_2fr_2fr_1fr_2fr] gap-5 relative"
+        class="w-full grid grid-rows-[1fr_4fr_2fr_2fr_1fr_2fr] gap-5 relative"
       >
         <div class="flex items-center">
           <div class="w-full h-[1px] bg-slate-400"></div>
         </div>
         <div class="relative items-stretch justify-center flex bg-cover">
           <div
-            class="aspect-square rounded-full relative overflow-hidden bg-cover bg-center cursor-pointer"
+            class="aspect-square min-h-[110px] rounded-full relative overflow-hidden bg-cover bg-center cursor-pointer"
             :style="'background-image:url(' + imageBase64 + ');'"
             @click="chooseFile()"
           >

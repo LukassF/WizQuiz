@@ -66,8 +66,13 @@
               type="password"
               placeholder="Password"
               name="password"
-              class="h-full px-3 outline-none text-slate-600 rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
+              class="h-full px-3 pr-[4rem] outline-none text-slate-600 rounded-xl max-h-[65px] border border-solid border-slate-400 w-full"
             />
+            <i
+              @click="togglePassword()"
+              :style="'right:' + (password_error ? '2.5rem' : '0.75rem')"
+              class="fa fa-eye absolute cursor-pointer right-3 top-1/2 transition-all -translate-y-1/2 bg-opacity-50 text-slate-400 text-[17px] grid place-content-center h-[17px] rounded-full aspect-square"
+            ></i>
             <i
               :style="'right:' + (password_error ? '0.75rem' : '-20px')"
               class="fa fa-close absolute right-3 top-1/2 transition-all -translate-y-1/2 bg-[rgb(252_90_90)] bg-opacity-50 text-white text-[8px] grid place-content-center h-[17px] rounded-full aspect-square"
@@ -244,6 +249,12 @@
           default:
             break;
         }
+      },
+
+      togglePassword() {
+        const type = (this.password_ref! as HTMLInputElement).type;
+        (this.password_ref! as HTMLInputElement).type =
+          type === "text" ? "password" : "text";
       },
     },
 

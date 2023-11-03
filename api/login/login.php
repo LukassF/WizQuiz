@@ -12,7 +12,7 @@ class Login implements ExecutableI{
     public function execute(string $method)
     {
         if($method === 'logInUser'){
-            return $this->controller->logInUser();
+            return $this->controller->logInUser();  
         }
     }
 }

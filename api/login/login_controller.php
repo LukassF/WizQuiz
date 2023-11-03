@@ -34,11 +34,44 @@ class LoginContr{
         }
 
         unset($result['PASSWORD']);
-        return ['status'=>true,'logs'=>$logs,'user'=>$result];
+
+        $output_object = ['status'=>true,'logs'=>$logs,'user'=>$result];
+
+        $token = $this->generateToken($result['ID']);
+        if (!$token[0]) {
+            $output_object['status'] = false;
+            $output_object['logs'] = ['Token not generated. Try again!'];
+            unset($output_object['user']);
+
+        } else {
+            $output_object['token'] = $token;
+        }
+        return $output_object;
     }
 
-    private function is_password_wrong($result)
-    {
+
+    private function generateToken(int $user_id){
+            
+        $token_bin = random_bytes(30);
+        $token = bin2hex($token_bin);
+
+        if($this->isTokenInDb($user_id)){
+            $deletion = $this->model->deleteToken($user_id);
+            if($deletion != true){
+                return [false,$deletion];
+            }
+        }
+
+        $token_insertion = $this->model->insertToken($token,$user_id);
+        if($token_insertion === true){
+            return [$token_insertion,$token];
+        }
+
+        return [false,$token_insertion];
+    }
+
+    private function is_password_wrong($result) {
+
         if (!$result || password_verify($this->password, $result['PASSWORD'])) {
             return false;
         } else {
@@ -46,8 +79,7 @@ class LoginContr{
         }
     }
 
-    private function is_username_wrong(bool|array $result)
-    {
+    private function is_username_wrong(bool|array $result){
         if (!$result) {
             return true;
         } else {
@@ -55,12 +87,20 @@ class LoginContr{
         }
     }
 
-    private function are_fields_empty()
-    {
+    private function are_fields_empty(){
         if (empty($this->username) || empty($this->password)) {
             return true;
         } else {
             return false;
         }
+    }
+
+    private function isTokenInDb(int $user_id){
+        $result = $this->model->getTokenByUserId($user_id);
+        if($result){
+            return true;
+        }
+
+        return false;
     }
 }

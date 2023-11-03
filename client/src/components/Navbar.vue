@@ -23,7 +23,7 @@
     </svg>
 
     <div
-      class="gap-16 text-lg text-white font-semibold items-center hidden md:flex"
+      class="gap-14 text-lg text-white font-semibold items-center hidden md:flex"
     >
       <router-link
         to="/"
@@ -37,15 +37,37 @@
         >Pricing</router-link
       >
       <span
+        v-if="!$store.state.isAuthenticated"
         @click="showLogin()"
         class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0"
         >Login</span
       >
+
+      <span
+        v-if="$store.state.isAuthenticated"
+        @click="logOut()"
+        class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0"
+        >Logout
+      </span>
       <button
-        class="bg-white hover:bg-stone-200 transition-all text-black px-6 py-2 rounded-full text-sm font-medium"
+        v-if="!$store.state.isAuthenticated"
+        class="bg-white hover:bg-stone-200 transition-all text-black px-6 py-2 rounded-full text-sm font-medium min-h-[35px] aspect-[4/1]"
       >
         Start For Free
       </button>
+
+      <router-link
+        to="/dashboard"
+        v-if="$store.state.isAuthenticated"
+        class="bg-white hover:bg-stone-100 transition-all text-black min-h-[36px] aspect-[4/1] rounded-full text-sm font-medium grid grid-cols-[2fr_5fr]"
+      >
+        <div class="relative flex justify-center items-center">
+          <div
+            class="w-[70%] aspect-square rounded-full bg-cover bg-center bg-[url('https://cdn-icons-png.flaticon.com/512/3177/3177440.png')]"
+          ></div>
+        </div>
+        <div class="flex justify-start items-center px-1 py-2">Dashboard</div>
+      </router-link>
     </div>
 
     <div class="flex md:hidden">
@@ -69,12 +91,32 @@
       <router-link to="/" class="cursor-pointer" @click="goToPricing()"
         >Pricing</router-link
       >
-      <span class="cursor-pointer" @click="showLogin()">Login</span>
+      <span
+        v-if="!$store.state.isAuthenticated"
+        class="cursor-pointer"
+        @click="showLogin()"
+        >Login</span
+      >
+      <span
+        v-if="$store.state.isAuthenticated"
+        @click="logOut()"
+        class="cursor-pointer relative after:w-3/4 after:h-[2px] after:scale-x-0 after:rounded-full hover:after:scale-x-100 after:transition-all after:origin-left after:bg-white after:absolute after:left-0 after:bottom-0"
+        >Logout
+      </span>
       <button
+        v-if="!$store.state.isAuthenticated"
         class="bg-main-blue hover:bg-blue-600 transition-all text-white px-6 py-2 rounded-full text-sm font-medium"
       >
         Start For Free
       </button>
+
+      <router-link
+        to="/dashboard"
+        v-if="$store.state.isAuthenticated"
+        class="bg-main-blue hover:bg-blue-600 transition-all text-white px-6 py-2 rounded-full text-sm font-medium"
+      >
+        Dashboard
+      </router-link>
     </div>
   </div>
 </template>
@@ -103,6 +145,12 @@
 
       goToPricing() {
         gsap.to(window, { duration: 0.4, scrollTo: "#pricing" });
+      },
+
+      logOut() {
+        this.$store.commit("setIsAuthenticated", false);
+        this.$cookies.remove("token");
+        window.localStorage.removeItem("current_user");
       },
     },
   };

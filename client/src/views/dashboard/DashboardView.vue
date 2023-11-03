@@ -3,7 +3,8 @@
   <NameQuiz v-if="$store.state.showQuizCreator" />
   <ModifyProfile v-if="$store.state.showModifyProfile" />
   <main
-    @click="openAside($event)"
+    id="main-main"
+    @click="setAside($event)"
     class="group bg-white m-0 xs:m-3 xs:rounded-xl grid lg:grid-cols-[2fr_7fr] gap-3 relative z-[20] p-3 sm/2:p-5 shadow-[2.0px_2.0px_1.0px_3px_rgba(0,0,0,0.18)]"
   >
     <aside
@@ -62,7 +63,7 @@
     </aside>
     <section class="lg/2:h-screen relative overflow-hidden">
       <button
-        @click="openAside($event)"
+        @click="setAside($event)"
         class="btn group-hover:translate-y-0 group-hover:opacity-100 opacity-0 transition-all -translate-y-12 absolute lg:hidden right-2 top-2 bg-main-blue text-white aspect-square w-12 grid place-content-center rounded-full drop-shadow-lg"
       >
         <i class="btn fa fa-bars"></i>
@@ -76,70 +77,69 @@
   </main>
 </template>
 
-<script lang="js">
-  import Overview from './components/overview/Overview.vue'
-  import Subscriptions from './components/subscriptions/Subscriptions.vue'
-  import MyQuizes from './components/my-quizes/MyQuizes.vue'
-  import Find from './components/find/Find.vue'
-  import Tooltip from '../../components/Tooltip.vue'
-  import NameQuiz from './components/create/NameQuiz.vue'
-  import ModifyProfile from './components/overview/overview-comp/ModifyProfile.vue'
+<script lang="ts">
+  import Overview from "./components/overview/Overview.vue";
+  import Subscriptions from "./components/subscriptions/Subscriptions.vue";
+  import MyQuizes from "./components/my-quizes/MyQuizes.vue";
+  import Find from "./components/find/Find.vue";
+  import Tooltip from "../../components/Tooltip.vue";
+  import NameQuiz from "./components/create/NameQuiz.vue";
+  import ModifyProfile from "./components/overview/overview-comp/ModifyProfile.vue";
 
   export default {
     name: "dashboard",
-    data(){
-      return{
-        position:'',
-        aside:'',
-        component:'overview'
-      }
+    data() {
+      return {
+        position: "",
+        aside: "",
+        component: "overview",
+      };
     },
     components: {
-     Overview,
-     Subscriptions,
-     MyQuizes,
-     Find,
-     Tooltip,
-     NameQuiz,
-     ModifyProfile
+      Overview,
+      Subscriptions,
+      MyQuizes,
+      Find,
+      Tooltip,
+      NameQuiz,
+      ModifyProfile,
     },
-    mounted(){
-      this.aside = document.getElementById('aside')
-      const style = window.getComputedStyle(this.aside)
-      this.position = style.position
+    mounted() {
+      //@ts-ignore
+      this.aside = document.getElementById("aside");
+      const style = window.getComputedStyle(this.aside as any);
+      this.position = style.position;
     },
     created() {
-    window.addEventListener("resize", this.myEventHandler);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.myEventHandler);
-  },
-  methods: {
-    myEventHandler() {
-      const style = window.getComputedStyle(this.aside)
-      this.position = style.position
+      window.addEventListener("resize", this.myEventHandler);
     },
-
-    setComponent(value){
-      this.component = value
+    destroyed() {
+      window.removeEventListener("resize", this.myEventHandler);
     },
-
-      openAside(e){
-        const classes = e.target.classList
-       if(classes.contains('clickable'))
-        return
-      else if(classes.contains('btn'))
-         this.$store.commit('setShowAside',true)
-        else
-           this.$store.commit('setShowAside',false)
-
-
+    methods: {
+      myEventHandler() {
+        const style = window.getComputedStyle(this.aside as any);
+        this.position = style.position;
       },
-      openQuizCreator(){
-        this.$store.commit('setShowQuizCreator',true)
-      }
 
-  }
+      setComponent(value: any) {
+        this.component = value;
+      },
 
+      setAside(e: any) {
+        const classes = e.target.classList;
+
+        if (classes.contains("clickable")) return;
+
+        if (classes.contains("btn") && e.currentTarget.id !== "main-main")
+          this.$store.commit("setShowAside", !this.$store.state.showAside);
+        else if (classes.contains("btn") && e.currentTarget.id === "main-main")
+          return;
+        else this.$store.commit("setShowAside", false);
+      },
+      openQuizCreator() {
+        this.$store.commit("setShowQuizCreator", true);
+      },
+    },
   };
 </script>

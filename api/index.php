@@ -6,6 +6,7 @@ require_once './includes/dbhandler.php';
 require_once './includes/interfaces.php';
 require_once './signup/signup.php';
 require_once './login/login.php';
+require_once './auth/auth.php';
 
 class Delegator implements DelegatorI {
     private $params;
@@ -22,8 +23,12 @@ class Delegator implements DelegatorI {
         elseif($request === 'login'){
             return new Login($this->params);
         }
+        elseif($request === 'auth'){
+            return new Auth($this->params);
+        }
     }
 }
+
 
 
 $request = $_GET['request'];

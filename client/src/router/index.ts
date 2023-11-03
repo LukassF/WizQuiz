@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import LandingView from "../views/landing/LandingView.vue";
 import DashboardView from "../views/dashboard/DashboardView.vue";
 import CreateView from "../views/create/CreateView.vue";
+import store from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,20 +22,15 @@ const routes: Array<RouteRecordRaw> = [
     name: "create",
     component: CreateView,
   },
-
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: routes,
+});
+
+router.beforeEach((to, from) => {
+  console.log(store.state.isAuthenticated);
 });
 
 export default router;

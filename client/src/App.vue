@@ -65,5 +65,11 @@
       Login,
       Signup,
     },
+    mounted() {
+      //@ts-ignore
+      const token = this.$cookies.get("token");
+      if (token) this.$store.dispatch("SET_AUTHENTICATED", token);
+      else this.$store.commit("setIsAuthenticated", false);
+    },
   };
 </script>

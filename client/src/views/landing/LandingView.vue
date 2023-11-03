@@ -1043,7 +1043,7 @@
       class="grid grid-cols-1 lg/2:grid-cols-3 w-full gap-10 xl:gap-20 pt-20 lg:pt-40 pb-10 px-0 lg:px-6 xl:px-20"
     >
       <div
-        class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
+        class="hover:scale-[1.02] lg:hover:scale-[1.06] duration-300 hover:shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] transition-all lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[2.0px_2.0px_1.0px_3px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
       >
         <div class="flex flex-col items-center">
           <h1 class="text-3xl font-semibold mb-5 overflow-hidden">FREE</h1>
@@ -1070,7 +1070,7 @@
         </button>
       </div>
       <div
-        class="lg/2:aspect-[2/3.4] lg:-mt-20 bg-featured rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex justify-center flex-col items-center p-8 gap-5 min-w-[260px]"
+        class="hover:scale-[1.02] lg:hover:scale-[1.06] transition-all duration-300 hover:shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] lg/2:aspect-[2/3.4] lg:-mt-20 bg-featured rounded-xl shadow-[2.0px_2.0px_1.0px_3px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex justify-center flex-col items-center p-8 gap-5 min-w-[260px]"
       >
         <div class="flex flex-col items-center">
           <h1 class="text-3xl font-semibold text-white mb-5 overflow-hidden">
@@ -1099,7 +1099,7 @@
         </button>
       </div>
       <div
-        class="lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
+        class="hover:scale-[1.02] lg:hover:scale-[1.06] duration-300 hover:shadow-[4.0px_4.0px_1.0px_5px_rgba(0,0,0,0.18)] transition-all lg/2:aspect-[2/3.4] bg-white rounded-xl shadow-[2.0px_2.0px_1.0px_3px_rgba(0,0,0,0.18)] flex sm/2:grid grid-cols-2 grid-rows-[3fr_1fr] lg/2:flex flex-col justify-center items-center p-8 gap-5 min-w-[260px]"
       >
         <div class="flex flex-col items-center">
           <h1 class="text-3xl font-semibold mb-5 overflow-hidden">PREMIUM</h1>

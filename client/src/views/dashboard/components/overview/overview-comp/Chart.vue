@@ -49,15 +49,18 @@
       lineTension: 1,
       scales: {
           y:{
-              max:8
+              max:8,
+              grid:{
+                display:true
+              }
+
           },
-        yAxes:[
-          {
-            ticks: {
-              beginAtZero: true,
+          x:{
+            grid:{
+              display:false
             }
           }
-        ]
+
       },
       plugins:{
      legend: {
